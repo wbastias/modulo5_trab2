@@ -277,71 +277,26 @@
       <div class="row">
           <h3>Enlaces de Interés</h3>
       </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="media">
-            <img class="d-flex mr-3" src="img/flag-64.png" 
-                alt="Generic placeholder image">
-            <div class="media-body">
-              <h5 class="mt-0">Enlaces Tipo 1</h5>
-              <ul>
-                <li>Enlace de interés del grupo <a href="#">Ver más</a></li>
-                <li>Enlace de interés del grupo <a href="#">Ver más</a></li>
-                <li>Enlace de interés del grupo <a href="#">Ver más</a></li>
-                <li>Enlace de interés del grupo <a href="#">Ver más</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="media">
-            <img class="d-flex mr-3" src="img/world-64.png" 
-                alt="Generic placeholder image">
-            <div class="media-body">
-              <h5 class="mt-0">Enlaces Tipo 2</h5>
-              <ul>
-                <li>Enlace de interés del grupo <a href="#">Ver más</a></li>
-                <li>Enlace de interés del grupo <a href="#">Ver más</a></li>
-                <li>Enlace de interés del grupo <a href="#">Ver más</a></li>
-                <li>Enlace de interés del grupo <a href="#">Ver más</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="media">
-            <img class="d-flex mr-3" src="img/screen-64.png" 
-                alt="Generic placeholder image">
-            <div class="media-body">
-              <h5 class="mt-0">Enlaces Tipo 3</h5>
-              <ul>
-                <li>Enlace de interés del grupo <a href="#">Ver más</a></li>
-                <li>Enlace de interés del grupo <a href="#">Ver más</a></li>
-                <li>Enlace de interés del grupo <a href="#">Ver más</a></li>
-                <li>Enlace de interés del grupo <a href="#">Ver más</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="media">
-            <img class="d-flex mr-3" src="img/gear-64.png" 
-                alt="Generic placeholder image">
-            <div class="media-body">
-              <h5 class="mt-0">Enlaces Tipo 4</h5>
-              <ul>
-                <li>Enlace de interés del grupo <a href="#">Ver más</a></li>
-                <li>Enlace de interés del grupo <a href="#">Ver más</a></li>
-                <li>Enlace de interés del grupo <a href="#">Ver más</a></li>
-                <li>Enlace de interés del grupo <a href="#">Ver más</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+	  {%for nrow in linkrows %}
+		<div class="row">
+			{%for ncol in linkcols %}
+				<div class="col-md-6">
+					<div class="media">
+					<img class="d-flex mr-3" src="../static/img/flag-64.png" alt="Generic placeholder  image">
+						<div class="media-body">
+							<h5 class="mt-0">{{linktxt0}}<!--contador--></h5>
+							<ul>
+							{% for r4 in range_4%}
+								<li>{{linktxt1}}<a href="#">{{linktxt2}}</a></li>
+							{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	  {% endfor %}
+	</div>   
     <!-- End Section: Enlaces -->
 
     <!-- Section: Contacto -->
