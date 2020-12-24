@@ -1,4 +1,4 @@
-
+{% load static %}
 <html lang="es">
   <head>
     <title>Awakelab Full Stack Python</title>
@@ -13,7 +13,7 @@
       crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" 
         rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
   </head>
   <body>
     <!-- Navigation Bar -->
@@ -275,19 +275,44 @@
     <!-- Section: Enlaces -->
     <div class="container-fluid bg-dark" id="enlaces">
       <div class="row">
-          <h3>Enlaces de Interés</h3>
+          <h3>{{linkTitulo}}</h3>
       </div>
 	  {%for nrow in linkrows %}
 		<div class="row">
 			{%for ncol in linkcols %}
 				<div class="col-md-6">
 					<div class="media">
-					<img class="d-flex mr-3" src="../static/img/flag-64.png" alt="Generic placeholder  image">
+					
+					<!-- Selección de img a mostrar -->
+					<!-- Fila 1-->
+					{% if nrow == 1 %}
+						<!-- img columna 1 -->
+						{% if ncol == 1 %}
+						<img class="d-flex mr-3" src="{% static "../static/img/flag-64.png" %}" alt="Generic placeholder  image">	
+						{% endif %}
+						<!-- img columna 2 -->
+						{% if ncol == 2 %}
+						<img class="d-flex mr-3" src="{% static "../static/img/world-64.png" %}" alt="Generic placeholder  image">
+						{% endif %}
+					{% endif %}
+					
+					<!-- Fila 2-->
+					{% if nrow == 2 %}
+						<!-- img columna 1 -->
+						{% if ncol == 1 %}
+						<img class="d-flex mr-3" src="{% static "../static/img/screen-64.png" %}" alt="Generic placeholder  image">
+						{% endif %}
+						<!-- img columna 2 -->
+						{% if ncol == 2 %}
+						<img class="d-flex mr-3" src="{% static "../static/img/gear-64.png" %}" alt="Generic placeholder  image">
+						{% endif %}
+					{% endif %}
+					
 						<div class="media-body">
-							<h5 class="mt-0">{{linktxt0}}<!--contador--></h5>
+							<h5 class="mt-0">{{link_txt0}}<!--contador--></h5>
 							<ul>
-							{% for r4 in range_4%}
-								<li>{{linktxt1}}<a href="#">{{linktxt2}}</a></li>
+							{% for r4 in link_range4%}
+								<li>{{link_txt1}}<a href="#">{{link_txt2}}</a></li>
 							{% endfor %}
 							</ul>
 						</div>
@@ -302,35 +327,47 @@
     <!-- Section: Contacto -->
     <div class="container-fluid bg-light" id="contacto">
       <div class="row">
-        <h2>Contáctanos</h2>
+        <h2>{{conTitulo}}</h2>
       </div>
       <div class="row justify-content-center align-items-center h-100">
         <div class="col-sm-6" id="contact-form">
+		
           <form>
-            <div class="form-group">
-              <label for="contact-name">Nombre</label>
-              <input type="text" class="form-control" id="contact-name" 
-                  placeholder="Tu Nombre">
-            </div>
-            <div class="form-group">
-              <label for="contact-email">Email</label>
-              <input type="email" class="form-control" id="contact-email" 
-                  placeholder="Tu Email">
-            </div>
-            <div class="form-group">
-              <label for="contact-msg">Email</label>
-              <textarea class="form-control" id="contact-msg" 
-                  placeholder="Tu Mensaje" rows="4"></textarea>
-            </div>
+			{% for k,v in con_txtrange.items %}
+				<div class="form-group">
+				{% if k == '1' %}
+					<label for="contact-name">{{v}}</label>
+					<input type="text" class="form-control" id="contact-name" placeholder="Tu Nombre">
+				{% elif k == '2' %}
+					<label for="contact-email">{{v}}</label>
+					<input type="email" class="form-control" id="contact-email" placeholder="Tu Email">
+				{% else %}
+					<label for="contact-msg">{{v}}</label>
+					<textarea class="form-control" id="contact-msg" placeholder="Tu Mensaje" rows="4"></textarea>
+				{% endif %}
+				</div>
+			{% endfor %}
             <div class="btn-group">
-              <button type="button" class="btn btn-outline-secondary">Enviar</button>
-              <button type="button" class="btn btn-outline-secondary">Limpiar</button>
+				{% for b in con_txtbtn %}
+					<button type="button" class="btn btn-outline-secondary">{{b}}</button>
+				{% endfor %}
+
             </div>
           </form>
+		  
         </div>
       </div>
     </div>
     <!-- End Section: Contacto -->
+
+
+
+
+
+
+
+
+
 
     <footer class="footer bg-dark text-center">
       <p class="text-muted">&copy; 2020 Awakelab.</p>
