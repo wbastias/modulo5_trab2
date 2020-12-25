@@ -1,10 +1,13 @@
-
+<!-- ESTE ES EL ARCHIVO BASE QUE SERA EXTENDIDO EN INDEX 2 -->
 <html lang="es">
+
   <head>
     <title>Awakelab Full Stack Python</title>
     <meta charset="utf-8">
     <meta name="viewport" 
         content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% load static %}
     <!-- Loading Bootstrap CSS -->
     <link 
       rel="stylesheet" 
@@ -13,7 +16,7 @@
       crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" 
         rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
   <body>
     <!-- Navigation Bar -->
@@ -127,17 +130,23 @@
     </div>
     <!-- End Section: Principal -->
 
+
+   
     <!-- Section: Competencias -->
-    <div class="container-fluid bg-dark" id="competencias">
+    {% block content %}
+    <div class="container-fluid bg-dark" id="competencias"> 
       <div class="row">
-        <h3>Nuestras Competencias</h3>
+        <h3>
+          Nuestras Competencias
+        </h3>
       </div>
+
       <div class="row">
         <div class="col-md-6 col-lg-3">
           <div class="card">
             <h3 class="card-header">Competencia 1</h3>
             <div class="card-body">
-              <h4 class="card-title">Subtítitulo competencia</h4>
+              <h4 class="card-title">Subtítitulo competencia </h4>
               <p class="card-text">Descripción de la competencia del 
                   grupo Full Stack Python de Awakelab.</p>
               <a href="#!" class="btn btn-dark">Ver mas</a>
@@ -213,8 +222,11 @@
           </div>
         </div>
       </div>
-    </div>
-    <!-- End Section: Competencias -->
+   </div>
+   {% endblock %}
+   <!-- End Section: Competencias -->
+
+
 
     <!-- Section: Equipo -->
     <div class="container-fluid bg-light" id="equipo">
@@ -228,19 +240,19 @@
             data-interval="3000">
           <div class="carousel-inner" style="padding: 4rem;" role="listbox">
             <div style="height: 400px" class="carousel-item active">
-              <img class="d-block img-fluid carousel-img" src="img/group1.jpg">
+              <img class="d-block img-fluid carousel-img" src="{% static 'C:/Users/claudio/modulo5_trab2/miapp2/static/img/group1.jpg' %}">
               <div class="carousel-caption">
                 Grupo Front End
               </div>
             </div>
             <div style="height: 400px" class="carousel-item">
-              <img class="d-block img-fluid carousel-img" src="img/group2.jpg">
+              <img class="d-block img-fluid carousel-img" src="{% static 'C:/Users/claudio/modulo5_trab2/miapp2/static/img/group2.jpg' %}">
               <div class="carousel-caption">
                 Grupo Back End
               </div>
             </div>
             <div style="height: 400px" class="carousel-item">
-              <img class="d-block img-fluid carousel-img" src="img/group3.jpg">
+              <img class="d-block img-fluid carousel-img" src="{% static 'C:/Users/claudio/modulo5_trab2/miapp2/static/img/group3.jpg' %}">
               <div class="carousel-caption">
                 Grupo DevOps
               </div>
@@ -280,7 +292,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="media">
-            <img class="d-flex mr-3" src="img/flag-64.png" 
+            <img class="d-flex mr-3" src="{% static 'C:/Users/claudio/modulo5_trab2/miapp2/static/img/flag-64.png' %}" 
                 alt="Generic placeholder image">
             <div class="media-body">
               <h5 class="mt-0">Enlaces Tipo 1</h5>
@@ -295,7 +307,7 @@
         </div>
         <div class="col-md-6">
           <div class="media">
-            <img class="d-flex mr-3" src="img/world-64.png" 
+            <img class="d-flex mr-3" src="{% static 'C:/Users/claudio/modulo5_trab2/miapp2/static/img/world-64.png' %}" 
                 alt="Generic placeholder image">
             <div class="media-body">
               <h5 class="mt-0">Enlaces Tipo 2</h5>
@@ -312,7 +324,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="media">
-            <img class="d-flex mr-3" src="img/screen-64.png" 
+            <img class="d-flex mr-3" src="{% static 'C:/Users/claudio/modulo5_trab2/miapp2/static/img/screen-64.png' %}" 
                 alt="Generic placeholder image">
             <div class="media-body">
               <h5 class="mt-0">Enlaces Tipo 3</h5>
@@ -327,7 +339,7 @@
         </div>
         <div class="col-md-6">
           <div class="media">
-            <img class="d-flex mr-3" src="img/gear-64.png" 
+            <img class="d-flex mr-3" src="{% static 'C:/Users/claudio/modulo5_trab2/miapp2/static/img/gear-64.png' %}" 
                 alt="Generic placeholder image">
             <div class="media-body">
               <h5 class="mt-0">Enlaces Tipo 4</h5>
