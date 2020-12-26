@@ -1,0 +1,51 @@
+<!-- ESTE ARCHIVO EXTIENDE A INDEX Y ES RENDERIZADO (REVISAR VIEWS)-->
+{% extends 'miapp2/index.html'%}
+
+{% block content %}
+
+<div class="container-fluid bg-dark" id="competencias"> 
+    <div class="row">
+      <h3>
+        Nuestras Competencias
+      </h3>
+    </div>
+
+    <div class="row">
+    {% for element1 in numeros_a %}
+      <div class="col-md-6 col-lg-3">
+        
+        <div class="card">
+          <h3 class="card-header">Competencia {{element1}}</h3>
+          <div class="card-body">
+            <h4 class="card-title">Subtítitulo competencia </h4>
+            <p class="card-text">Descripción de la competencia del 
+                grupo Full Stack Python de Awakelab.</p>
+            <a href="#!" class="btn btn-dark">Ver mas</a>
+          </div>
+        </div>
+      </div>
+    {%endfor%}
+    </div>
+    
+    
+   
+    <div class="row">
+    {% for element2 in numeros_b %}
+      <div class="col-md-4">
+        <div class="card">
+          <h3 class="card-header">Competencia {{element2}}</h3>
+          <div class="card-body">
+            <h4 class="card-title">Subtítitulo competencia</h4>
+            <p class="card-text">Descripción de la competencia del 
+              grupo Full Stack Python de Awakelab.</p>
+            <a href="#!" class="btn btn-dark">Ver mas</a>
+          </div>
+        </div>
+      </div>
+    {%endfor%}
+    </div>
+  
+</div>
+
+
+{% endblock %}
