@@ -49,3 +49,59 @@
 
 
 {% endblock %}
+
+{% block equipo %}
+<div class="container-fluid bg-light" id="equipo">
+  <div class="row">
+    <h3>Nuestro Equipo</h3>
+  </div>
+  <div class="row">
+    <div id="team-carousel" 
+        class="carousel slide" 
+        data-ride="carousel" 
+        data-interval="3000">
+      <div class="carousel-inner" style="padding: 4rem;" role="listbox">
+        <div style="height: 400px" class="carousel-item active">
+          <img class="d-block img-fluid carousel-img" src="{% static 'miapp2/group1.jpg' %}">
+          <div class="carousel-caption">
+            Grupo Front End
+          </div>
+        </div>
+        <div style="height: 400px" class="carousel-item">
+          <img class="d-block img-fluid carousel-img" src="{% static 'miapp2/static/img/group2.jpg' %}">
+          <div class="carousel-caption">
+            Grupo Back End
+          </div>
+        </div>
+        <div style="height: 400px" class="carousel-item">
+          <img class="d-block img-fluid carousel-img" src="{% static 'miapp2/static/img/group3.jpg' %}">
+          <div class="carousel-caption">
+            Grupo DevOps
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" 
+          href="#team-carousel" 
+          role="button" 
+          data-slide="prev">
+        <span class="icon-prev" aria-hidden="true"></span>
+      </a>
+      <a class="right carousel-control" 
+          href="#team-carousel" 
+          role="button" 
+          data-slide="next">
+        <span class="icon-next" aria-hidden="true"></span>
+      </a>
+      <ol class="carousel-indicators">
+        <li data-target="#team-carousel" 
+            data-slide-to="0" 
+            class="active"></li>
+        <li data-target="#team-carousel" 
+            data-slide-to="1"></li>
+        <li data-target="#team-carousel" 
+            data-slide-to="2"></li>
+      </ol>
+    </div>
+  </div>
+</div>
+{% endblock %}

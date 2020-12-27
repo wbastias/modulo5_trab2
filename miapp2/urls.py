@@ -5,7 +5,7 @@ from . import views
 
 
 urlpatterns = [
-    path('miapp/', views.mostrar_index2),
+    path('', views.mostrar_index2),
 
 ]
 

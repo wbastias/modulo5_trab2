@@ -229,6 +229,7 @@
 
 
     <!-- Section: Equipo -->
+    {% block equipo %}
     <div class="container-fluid bg-light" id="equipo">
       <div class="row">
         <h3>Nuestro Equipo</h3>
@@ -240,19 +241,19 @@
             data-interval="3000">
           <div class="carousel-inner" style="padding: 4rem;" role="listbox">
             <div style="height: 400px" class="carousel-item active">
-              <img class="d-block img-fluid carousel-img" src="{% static 'C:/Users/claudio/modulo5_trab2/miapp2/static/img/group1.jpg' %}">
+              <img class="d-block img-fluid carousel-img" src="{% static 'miapp2/static/miapp2/img/group1.jpg' %}">
               <div class="carousel-caption">
                 Grupo Front End
               </div>
             </div>
             <div style="height: 400px" class="carousel-item">
-              <img class="d-block img-fluid carousel-img" src="{% static 'C:/Users/claudio/modulo5_trab2/miapp2/static/img/group2.jpg' %}">
+              <img class="d-block img-fluid carousel-img" src="{% static 'miapp2/static/img/group2.jpg' %}">
               <div class="carousel-caption">
                 Grupo Back End
               </div>
             </div>
             <div style="height: 400px" class="carousel-item">
-              <img class="d-block img-fluid carousel-img" src="{% static 'C:/Users/claudio/modulo5_trab2/miapp2/static/img/group3.jpg' %}">
+              <img class="d-block img-fluid carousel-img" src="{% static 'miapp2/static/img/group3.jpg' %}">
               <div class="carousel-caption">
                 Grupo DevOps
               </div>
@@ -282,6 +283,7 @@
         </div>
       </div>
     </div>
+    {% endblock equipo %}
     <!-- End Section: Equipo -->
 
     <!-- Section: Enlaces -->
