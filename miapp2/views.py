@@ -44,3 +44,16 @@ def index(request):
     'conTitulo':conTitulo,'con_txtrange':con_txtrange, 'con_txtbtn':con_txtbtn
     }
     return render(request,'miapp2/index2.html',context)
+def index(request):
+    
+    # ------------- Vale Code ----------------    
+    equipo = ['Claudio', 'Miguel','Sebastian', 'Valentina', 'Walter']
+    context = {'lista_equipo': equipo,
+                'tittle': "Nuestro Equipo"}
+    return render(request, 'miapp2/index.html', context)
+
+
+        
+        
+    
+        
