@@ -223,13 +223,12 @@
         </div>
       </div>
    </div>
-   {% endblock %}
+
    <!-- End Section: Competencias -->
 
 
 
     <!-- Section: Equipo -->
-    {% block equipo %}
     <div class="container-fluid bg-light" id="equipo">
       <div class="row">
         <h3>Nuestro Equipo</h3>
@@ -241,7 +240,7 @@
             data-interval="3000">
           <div class="carousel-inner" style="padding: 4rem;" role="listbox">
             <div style="height: 400px" class="carousel-item active">
-              <img class="d-block img-fluid carousel-img" src="{% static 'miapp2/static/miapp2/img/group1.jpg' %}">
+              <img class="d-block img-fluid carousel-img" src="{% static '../img/group1.jpg' %}">
               <div class="carousel-caption">
                 Grupo Front End
               </div>
@@ -283,7 +282,7 @@
         </div>
       </div>
     </div>
-    {% endblock equipo %}
+    {% endblock %}
     <!-- End Section: Equipo -->
 
     <!-- Section: Enlaces -->
