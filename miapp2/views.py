@@ -43,4 +43,4 @@ def index(request):
     context={'linkTitulo':linkTitulo,'linkrows':linkrow,'linkcols':linkcol,'link_range4':link_range4,'link_txt0':link_txt0,'link_txt1':link_txt1,'link_txt2':link_txt2,
     'conTitulo':conTitulo,'con_txtrange':con_txtrange, 'con_txtbtn':con_txtbtn
     }
-    return render(request,'miapp2/index.html',context)
+    return render(request,'miapp2/index2.html',context)
