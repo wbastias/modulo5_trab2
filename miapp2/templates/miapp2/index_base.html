@@ -1,10 +1,14 @@
-
+<!-- ESTE ES EL ARCHIVO BASE QUE SERA EXTENDIDO EN INDEX 2 -->
+{% load static %}
 <html lang="es">
+
   <head>
     <title>Awakelab Full Stack Python</title>
     <meta charset="utf-8">
     <meta name="viewport" 
         content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
     <!-- Loading Bootstrap CSS -->
     <link 
       rel="stylesheet" 
@@ -13,7 +17,7 @@
       crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" 
         rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
   <body>
     <!-- Navigation Bar -->
@@ -127,6 +131,8 @@
     </div>
     <!-- End Section: Principal -->
 
+
+    {% block competencias %}
     <!-- Section: Competencias -->
     <div class="container-fluid bg-dark" id="competencias">
       <div class="row">
@@ -215,7 +221,10 @@
       </div>
     </div>
     <!-- End Section: Competencias -->
+    {% endblock %}
 
+    
+    {% block equipo %}
     <!-- Section: Equipo -->
     <div class="container-fluid bg-light" id="equipo">
       <div class="row">
@@ -228,19 +237,19 @@
             data-interval="3000">
           <div class="carousel-inner" style="padding: 4rem;" role="listbox">
             <div style="height: 400px" class="carousel-item active">
-              <img class="d-block img-fluid carousel-img" src="img/group1.jpg">
+              <img class="d-block img-fluid carousel-img" src="{% static 'miapp2/img/group1.jpg' %}">
               <div class="carousel-caption">
                 Grupo Front End
               </div>
             </div>
             <div style="height: 400px" class="carousel-item">
-              <img class="d-block img-fluid carousel-img" src="img/group2.jpg">
+              <img class="d-block img-fluid carousel-img" src="{% static 'miapp2/img/group2.jpg' %}">
               <div class="carousel-caption">
                 Grupo Back End
               </div>
             </div>
             <div style="height: 400px" class="carousel-item">
-              <img class="d-block img-fluid carousel-img" src="img/group3.jpg">
+              <img class="d-block img-fluid carousel-img" src="{% static 'miapp2/img/group3.jpg' %}">
               <div class="carousel-caption">
                 Grupo DevOps
               </div>
@@ -270,8 +279,11 @@
         </div>
       </div>
     </div>
-    <!-- End Section: Equipo -->
+<!-- End Section: Equipo -->
+{% endblock%}
 
+
+{% block enlaces %}
     <!-- Section: Enlaces -->
     <div class="container-fluid bg-dark" id="enlaces">
       <div class="row">
@@ -343,7 +355,10 @@
       </div>
     </div>
     <!-- End Section: Enlaces -->
+    {% endblock %}
 
+
+    {% block contacto %}
     <!-- Section: Contacto -->
     <div class="container-fluid bg-light" id="contacto">
       <div class="row">
@@ -376,11 +391,15 @@
       </div>
     </div>
     <!-- End Section: Contacto -->
+    {% endblock %}
 
+
+    {% block footer %}
     <footer class="footer bg-dark text-center">
       <p class="text-muted">&copy; 2020 Awakelab.</p>
       <p class="text-muted">Grupo Full Stack Python</p>
     </footer>
+    {% endblock %}
 
     <!-- MODAL FORMS -->
     <div class="modal" id="profile-modal" role="dialog">
